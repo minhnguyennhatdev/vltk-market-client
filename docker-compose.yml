@@ -1,9 +1,8 @@
 version: "3.9"
 
 networks:
-    internal_network:
-        name: internal_network
-        driver: overlay
+  internal_network:
+    driver: overlay
 
 services:
   web:
