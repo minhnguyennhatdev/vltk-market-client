@@ -4,12 +4,7 @@ networks:
 
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3000}
-    image: vltk_market_client:latest
+    image: ${IMAGE_NAME:-ghcr.io/world-event/postgres/vltk_market_client:latest}
     container_name: vltk_market_client
     ports:
       - "3000:3000"

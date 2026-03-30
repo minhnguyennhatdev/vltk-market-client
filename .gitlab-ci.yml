@@ -1,0 +1,30 @@
+stages:
+  - docker
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_DRIVER: overlay2
+  # Set this in GitLab CI/CD variables for production builds.
+  NEXT_PUBLIC_API_URL: "http://localhost:3000"
+
+docker_build_and_publish:
+  stage: docker
+  image: docker:27
+  services:
+    - name: docker:27-dind
+      command: ["--tls=false"]
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+  script:
+    - export IMAGE_TAG="$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+    - docker build --build-arg NEXT_PUBLIC_API_URL="$NEXT_PUBLIC_API_URL" -t "$IMAGE_TAG" -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
+    - docker push "$IMAGE_TAG"
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
+    - |
+      if [ "$CI_COMMIT_BRANCH" = "$CI_DEFAULT_BRANCH" ]; then
+        docker tag "$IMAGE_TAG" "$CI_REGISTRY_IMAGE:latest"
+        docker push "$CI_REGISTRY_IMAGE:latest"
+      fi
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
