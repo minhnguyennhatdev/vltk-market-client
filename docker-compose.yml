@@ -4,7 +4,7 @@ networks:
 
 services:
   web:
-    image: ${IMAGE_NAME:-ghcr.io/world-event/postgres/vltk_market_client:latest}
+    image: ghcr.io/minhnguyennhatdev/vltk-market-client:latest
     container_name: vltk_market_client
     ports:
       - "3000:3000"
