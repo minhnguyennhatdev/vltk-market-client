@@ -1,0 +1,87 @@
+{
+  "home": {
+    "title": "Chợ VLTK 2.0",
+    "sellItems": "Bày bán vật phẩm"
+  },
+  "filters": {
+    "server": "Máy chủ",
+    "category": "Loại vật phẩm",
+    "slot": "Vị trí",
+    "weaponType": "Loại vũ khí",
+    "element": "Ngũ hành",
+    "gender": "Giới tính",
+    "currency": "Tiền tệ",
+    "level": "Cấp",
+    "levelPlaceholder": "1~11",
+    "statFilter": "Lọc chỉ số",
+    "addStat": "Thêm chỉ số",
+    "clear": "Xóa bộ lọc",
+    "search": "Tìm kiếm",
+    "itemsHere": "Danh sách vật phẩm"
+  },
+  "validation": {
+    "missingKey": "Vui lòng chọn {label}",
+    "missingValue": "Vui lòng nhập giá trị"
+  },
+  "greaterThanOrEqual": ">=",
+  "viewImage": "Xem ảnh",
+  "basicInfo": "Thông tin cơ bản",
+  "stats": "Chỉ số",
+  "contactInfo": "Thông tin liên hệ",
+  "ownerInfo": "Thông tin người bán",
+  "pagination": {
+    "loadMore": "Xem thêm"
+  },
+  "cancel": "Hủy",
+  "itemName": "Tên vật phẩm",
+  "description": "Mô tả",
+  "askingPrice": "Giá mong muốn",
+  "owner": {
+    "server": "Máy chủ",
+    "playerName": "Tên người chơi",
+    "contactInfo": "Thông tin liên hệ",
+    "contactInfoPlaceholder": "Để lại Zalo, Facebook, Email,..."
+  },
+  "simulator": {
+    "title": "Mô phỏng ngũ hành trang bị",
+    "actions": {
+      "save": "Chia sẻ",
+      "clear": "Xóa"
+    },
+    "defaultWeaponElementLabel": "Mặc định theo ngũ hành vũ khí:",
+    "characterElementLabel": "Ngũ hành nhân vật:",
+    "placeholders": {
+      "selectDefaultWeaponElement": "Xem mặc định (theo ngũ hành vũ khí)",
+      "selectCharacterElement": "Chọn ngũ hành nhân vật",
+      "selectElement": "Chọn ngũ hành"
+    },
+    "linkedSlotsLabel": "Tương sinh:",
+    "additionalStatsLabel": "Chỉ số cộng thêm:",
+    "shareModal": {
+      "title": "Chia sẻ",
+      "description": "Đây là liên kết của cấu hình hiện tại:",
+      "copy": "Sao chép",
+      "copySuccess": "Đã sao chép liên kết",
+      "close": "Đóng"
+    },
+    "elements": {
+      "metal": "Kim",
+      "wood": "Mộc",
+      "water": "Thủy",
+      "fire": "Hỏa",
+      "earth": "Thổ"
+    },
+    "slots": {
+      "weapon": "Vũ khí",
+      "necklace": "Dây chuyền",
+      "armor": "Trang phục",
+      "head": "Mũ",
+      "belt": "Thắt lưng",
+      "gloves": "Bao tay",
+      "upperRing": "Nhẫn trên",
+      "lowerRing": "Nhẫn dưới",
+      "boots": "Giày",
+      "amulet": "Ngọc bội"
+    }
+  }
+}
