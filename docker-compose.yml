@@ -5,7 +5,6 @@ networks:
 services:
   web:
     image: ghcr.io/minhnguyennhatdev/vltk-market-client:latest
-    container_name: vltk_market_client
     environment:
       NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3000}
       NODE_ENV: production
