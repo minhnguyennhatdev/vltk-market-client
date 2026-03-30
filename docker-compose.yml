@@ -1,9 +1,9 @@
 version: "3.9"
 
 networks:
-    vltk_market_client_network:
-        name: vltk_market_client_network
-        driver: bridge
+    internal_network:
+        name: internal_network
+        driver: overlay
 
 services:
   web:
@@ -19,4 +19,4 @@ services:
       NODE_ENV: production
     restart: unless-stopped
     networks:
-      - vltk_market_client_network
+      - internal_network
