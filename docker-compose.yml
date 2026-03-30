@@ -1,10 +1,10 @@
 services:
-  web:
+  vltk_market_client:
     build:
       context: .
       dockerfile: Dockerfile
-    image: vltk-market-client:latest
-    container_name: vltk-market-client
+    image: vltk_market_client:latest
+    container_name: vltk_market_client
     ports:
       - "3000:3000"
     environment:
