@@ -97,6 +97,14 @@ const ELEMENT_COLORS: Record<Element, string> = {
 };
 
 type SlotElementState = Partial<Record<SimulatorSlot, Element>>;
+type SlotResult = {
+  slot: SimulatorSlot;
+  selectedElement: Element | null;
+  requiredElement: Element | null;
+  linkedSlots: SimulatorSlot[];
+  matchedLinkedSlots: SimulatorSlot[];
+  additionalStatCount: number;
+};
 
 const DEFAULT_PAIR_GROUPS: SimulatorSlot[][] = [
   [Slot.Head, Slot.Weapon],
@@ -151,7 +159,7 @@ export const Simulator = () => {
     [getElementLabel]
   );
 
-  const slotResults = useMemo(() => {
+  const slotResults = useMemo<SlotResult[]>(() => {
     return SLOT_ORDER.map((slot) => {
       const selectedElement = slotElements[slot];
       const linkedSlots = SLOT_LINKS[slot];
@@ -207,6 +215,22 @@ export const Simulator = () => {
     await navigator.clipboard.writeText(shareLink);
     message.success(t("simulator.shareModal.copySuccess"));
   };
+
+  const renderLinkedSlots = (slotResult: SlotResult) =>
+    slotResult.linkedSlots.map((slot, index) => {
+      const linkedLabel =
+        slotResult.requiredElement == null
+          ? getSlotLabel(slot)
+          : `${getSlotLabel(slot)} (${getElementLabel(slotResult.requiredElement)})`;
+      const isMatched = slotResult.matchedLinkedSlots.includes(slot);
+
+      return (
+        <span key={slot} style={isMatched ? { color: "#16a34a" } : undefined}>
+          {index > 0 ? ", " : ""}
+          {linkedLabel}
+        </span>
+      );
+    });
 
   return (
     <DefaultLayout>
@@ -310,15 +334,7 @@ export const Simulator = () => {
 
                   <Typography.Text type="secondary">
                     {t("simulator.linkedSlotsLabel")}{" "}
-                    {slotResult.linkedSlots
-                      .map((slot) =>
-                        slotResult.requiredElement == null
-                          ? getSlotLabel(slot)
-                          : `${getSlotLabel(slot)} (${getElementLabel(
-                            slotResult.requiredElement
-                          )})`
-                      )
-                      .join(", ")}
+                    {renderLinkedSlots(slotResult)}
                   </Typography.Text>
 
                   <Typography.Text>
