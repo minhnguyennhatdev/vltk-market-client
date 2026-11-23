@@ -37,11 +37,12 @@ RUN pnpm install --prod --frozen-lockfile
 
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.ts ./next.config.ts
+COPY --from=builder /app/next.config.mjs ./next.config.mjs
 COPY --from=builder /app/next-i18next.config.js ./next-i18next.config.js
 
 USER nextjs
 
 EXPOSE 3000
 
-CMD ["pnpm", "start"]
+# run next directly: invoking pnpm here would make corepack fetch another pnpm at runtime as the nextjs user
+CMD ["node", "node_modules/next/dist/bin/next", "start"]

@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
 import nextI18nextConfig from "./next-i18next.config.js";
 
-const nextConfig: NextConfig = {
+/** @type {import("next").NextConfig} */
+const nextConfig = {
     /* config options here */
     reactCompiler: true,
     reactStrictMode: true,
