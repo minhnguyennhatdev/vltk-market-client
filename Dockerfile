@@ -2,8 +2,10 @@ FROM node:20-alpine AS base
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+# shared corepack cache so the non-root runtime user reuses the pinned pnpm instead of downloading one
+ENV COREPACK_HOME="/corepack"
 
-RUN corepack enable && corepack prepare pnpm@10.12.1 --activate
+RUN corepack enable && corepack install -g pnpm@10.12.1
 
 FROM base AS deps
 WORKDIR /app

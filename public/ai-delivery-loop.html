@@ -35,7 +35,7 @@
         </style>
     </head>
     <body>
-        <title>Claims Delivery Loop</title>
+        <title>AI Delivery Loop</title>
         <meta name="claude:viewport-fit-sides" content="cover" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -413,7 +413,7 @@
         </style>
 
         <div class="wrap">
-            <h1>Claims Delivery Loop</h1>
+            <h1>AI Delivery Loop</h1>
 
             <!-- 1. Swimlane -->
             <figure>
@@ -443,7 +443,7 @@
                     <svg
                         viewBox="0 0 1240 552"
                         role="img"
-                        aria-label="Swimlane of one ticket through eight stages: plan, execute, review, local E2E test, merge, release, UAT E2E test and sign-off. Claude leads execute, local E2E, merge and release; drafts the plan and shares review; assists UAT testing and hands off at sign-off. The developer approves the plan, the push, the release and the ticket update."
+                        aria-label="Swimlane of one ticket through eight stages: plan, execute, review, local E2E test, merge, release, UAT E2E test and sign-off. Claude leads execute, local E2E, merge and release; drafts the plan and shares review; shares UAT testing with QA, runs an AI test wherever QA tests, and hands off at sign-off. The developer approves the plan, the push, the release and the ticket update."
                     >
                         <defs>
                             <marker
@@ -615,9 +615,9 @@
                         <circle cx="875" cy="66" r="3.5" class="dot-on" />
                         <text x="884" y="70" class="t-role">leads</text>
                         <circle cx="993" cy="66" r="3.5" class="dot-on" />
-                        <circle cx="1003" cy="66" r="3.5" class="dot-off" />
+                        <circle cx="1003" cy="66" r="3.5" class="dot-on" />
                         <circle cx="1013" cy="66" r="3.5" class="dot-off" />
-                        <text x="1022" y="70" class="t-role">assists</text>
+                        <text x="1022" y="70" class="t-role">shares</text>
                         <circle cx="1131" cy="66" r="3.5" class="dot-on" />
                         <circle cx="1141" cy="66" r="3.5" class="dot-off" />
                         <circle cx="1151" cy="66" r="3.5" class="dot-off" />
@@ -827,10 +827,10 @@
                             class="n-claude"
                         />
                         <text x="199" y="240" text-anchor="middle" class="t">
-                            Reads ticket,
+                            Drafts plan +
                         </text>
                         <text x="199" y="254" text-anchor="middle" class="t">
-                            drafts plan
+                            AI test cases
                         </text>
                         <rect
                             x="278"
@@ -869,7 +869,7 @@
                             class="n-claude"
                         />
                         <text x="613" y="240" text-anchor="middle" class="t">
-                            Drives claims
+                            Runs AI E2E
                         </text>
                         <text x="613" y="254" text-anchor="middle" class="t">
                             via API + DB
@@ -911,10 +911,10 @@
                             class="n-claude"
                         />
                         <text x="1027" y="240" text-anchor="middle" class="t">
-                            Checks deploy,
+                            Runs AI E2E,
                         </text>
                         <text x="1027" y="254" text-anchor="middle" class="t">
-                            reproduces bugs
+                            triages failures
                         </text>
                         <rect
                             x="1106"
@@ -925,7 +925,7 @@
                             class="n-claude"
                         />
                         <text x="1165" y="240" text-anchor="middle" class="t">
-                            Drafts notes,
+                            Shares AI report,
                         </text>
                         <text x="1165" y="254" text-anchor="middle" class="t">
                             moves ticket
@@ -1068,17 +1068,17 @@
                             deploy PRs
                         </text>
                         <rect
-                            x="968"
+                            x="990"
                             y="408"
-                            width="118"
+                            width="96"
                             height="40"
                             rx="6"
                             class="n-team"
                         />
-                        <text x="1027" y="424" text-anchor="middle" class="t">
+                        <text x="1038" y="424" text-anchor="middle" class="t">
                             QA tests UAT,
                         </text>
-                        <text x="1027" y="438" text-anchor="middle" class="t">
+                        <text x="1038" y="438" text-anchor="middle" class="t">
                             files bugs
                         </text>
                         <rect
@@ -1124,14 +1124,23 @@
                         />
                         <text x="895" y="344" class="lbl">bump PRs</text>
                         <line
-                            x1="1027"
+                            x1="1038"
                             y1="408"
-                            x2="1027"
+                            x2="1038"
                             y2="266"
                             class="e"
                             marker-end="url(#a-ah)"
                         />
-                        <text x="1033" y="344" class="lbl">bug reports</text>
+                        <text x="1044" y="344" class="lbl">bug reports</text>
+                        <line
+                            x1="978"
+                            y1="264"
+                            x2="978"
+                            y2="496"
+                            class="e-c"
+                            marker-end="url(#a-ahc)"
+                        />
+                        <text x="984" y="344" class="lbl-c">AI tests</text>
                         <line
                             x1="1165"
                             y1="264"
@@ -1188,7 +1197,7 @@
                             Local API,
                         </text>
                         <text x="613" y="528" text-anchor="middle" class="t">
-                            DB, Temporal
+                            DB, worker
                         </text>
                         <rect
                             x="692"
@@ -1263,14 +1272,14 @@
                         />
                         <text x="895" y="468" class="lbl">deploys</text>
                         <line
-                            x1="1027"
+                            x1="1038"
                             y1="448"
-                            x2="1027"
+                            x2="1038"
                             y2="496"
                             class="e"
                             marker-end="url(#a-ah)"
                         />
-                        <text x="1033" y="468" class="lbl">tests on</text>
+                        <text x="1044" y="468" class="lbl">tests on</text>
                         <line
                             x1="1165"
                             y1="448"
@@ -1283,8 +1292,8 @@
                     </svg>
                 </div>
                 <figcaption>
-                    Claude carries the work from plan to release. People decide
-                    at every PEND, and QA and BA own UAT testing and sign-off.
+                    Claude runs an AI test wherever QA tests. People decide at
+                    every PEND, and QA and BA sign off.
                 </figcaption>
             </figure>
 
@@ -1802,9 +1811,9 @@
                 <h2>Local E2E and UAT E2E</h2>
                 <div class="fig fig-mid">
                     <svg
-                        viewBox="0 0 1000 310"
+                        viewBox="0 0 1000 304"
                         role="img"
-                        aria-label="Local E2E: Claude submits a claim to the local API, the Temporal worker adjudicates and writes to the database, Claude reads back status, calculation and balances, and either passes or fixes the code and reruns. The developer runs the local stack. UAT E2E: QA files a bug, Claude reads it, checks the deployed tag, the published reference data and reproduces it on UAT, then reaches a verdict: code bug, reference data gap, or working as designed."
+                        aria-label="Local E2E: Claude sends a request to the local API, the background worker processes it and writes to the database, Claude reads back status and results, and either passes or fixes the code and reruns. The developer runs the local stack. UAT E2E: Claude runs an AI E2E pass and QA runs its manual test cases on UAT. If anything fails, Claude checks the deployed tag and config data and reproduces it, then reaches a verdict: code bug or config gap, fixed and rerun by both, or working as designed."
                     >
                         <defs>
                             <marker
@@ -1871,7 +1880,7 @@
                             Claude Code
                         </text>
                         <text x="100" y="90" text-anchor="middle" class="t">
-                            submits claim
+                            sends request
                         </text>
                         <rect
                             x="210"
@@ -1893,10 +1902,10 @@
                             class="n-env"
                         />
                         <text x="420" y="76" text-anchor="middle" class="t">
-                            Temporal worker
+                            Background worker
                         </text>
                         <text x="420" y="90" text-anchor="middle" class="t-sub">
-                            adjudicates
+                            processes
                         </text>
                         <rect
                             x="360"
@@ -1959,7 +1968,7 @@
                             text-anchor="middle"
                             class="t-sub"
                         >
-                            status, calc, balances
+                            status + results
                         </text>
                         <line
                             x1="360"
@@ -2076,220 +2085,263 @@
 
                         <!-- UAT -->
                         <rect
-                            x="530"
-                            y="60"
+                            x="544"
+                            y="44"
+                            width="120"
+                            height="40"
+                            rx="6"
+                            class="n-claude"
+                        />
+                        <text x="604" y="60" text-anchor="middle" class="t">
+                            Claude
+                        </text>
+                        <text x="604" y="75" text-anchor="middle" class="t-sub">
+                            AI E2E run
+                        </text>
+                        <rect
+                            x="544"
+                            y="104"
                             width="120"
                             height="40"
                             rx="6"
                             class="n-team"
                         />
-                        <text x="590" y="76" text-anchor="middle" class="t">
-                            QA tests UAT,
+                        <text x="604" y="120" text-anchor="middle" class="t">
+                            QA
                         </text>
-                        <text x="590" y="90" text-anchor="middle" class="t">
-                            files a bug
+                        <text
+                            x="604"
+                            y="135"
+                            text-anchor="middle"
+                            class="t-sub"
+                        >
+                            manual test cases
+                        </text>
+
+                        <rect
+                            x="700"
+                            y="76"
+                            width="76"
+                            height="36"
+                            rx="6"
+                            class="n-env"
+                        />
+                        <text x="738" y="98" text-anchor="middle" class="t">
+                            UAT
                         </text>
                         <line
-                            x1="650"
-                            y1="80"
-                            x2="692"
-                            y2="80"
+                            x1="664"
+                            y1="64"
+                            x2="698"
+                            y2="86"
+                            class="e-c"
+                            marker-end="url(#e-ahc)"
+                        />
+                        <text x="681" y="58" text-anchor="middle" class="lbl-c">
+                            AI tests
+                        </text>
+                        <line
+                            x1="664"
+                            y1="124"
+                            x2="698"
+                            y2="102"
                             class="e"
                             marker-end="url(#e-ah)"
                         />
-                        <text x="671" y="72" text-anchor="middle" class="lbl">
-                            bug
-                        </text>
-                        <rect
-                            x="694"
-                            y="60"
-                            width="120"
-                            height="40"
-                            rx="6"
-                            class="n-claude"
-                        />
-                        <text x="754" y="76" text-anchor="middle" class="t">
-                            Reads ticket,
-                        </text>
-                        <text x="754" y="90" text-anchor="middle" class="t">
-                            notes, video
+                        <text x="681" y="142" text-anchor="middle" class="lbl">
+                            tests
                         </text>
 
                         <line
-                            x1="814"
-                            y1="80"
-                            x2="862"
-                            y2="56"
+                            x1="776"
+                            y1="94"
+                            x2="794"
+                            y2="94"
+                            class="e"
+                            marker-end="url(#e-ah)"
+                        />
+                        <polygon
+                            points="796,94 838,70 880,94 838,118"
+                            class="n"
+                        />
+                        <text x="838" y="91" text-anchor="middle" class="t-s">
+                            All
+                        </text>
+                        <text x="838" y="104" text-anchor="middle" class="t-s">
+                            pass?
+                        </text>
+                        <line
+                            x1="880"
+                            y1="94"
+                            x2="916"
+                            y2="94"
                             class="e-c"
                             marker-end="url(#e-ahc)"
                         />
-                        <line
-                            x1="814"
-                            y1="80"
-                            x2="862"
-                            y2="112"
-                            class="e-c"
-                            marker-end="url(#e-ahc)"
-                        />
-                        <line
-                            x1="814"
-                            y1="80"
-                            x2="862"
-                            y2="168"
-                            class="e-c"
-                            marker-end="url(#e-ahc)"
+                        <text x="898" y="86" text-anchor="middle" class="lbl-c">
+                            yes
+                        </text>
+                        <rect
+                            x="918"
+                            y="80"
+                            width="72"
+                            height="28"
+                            rx="14"
+                            class="n-end"
                         />
                         <text
-                            x="822"
-                            y="150"
+                            x="954"
+                            y="98"
                             text-anchor="middle"
-                            class="lbl-c"
+                            class="t-mono"
                         >
-                            checks
+                            PASS
                         </text>
 
+                        <line
+                            x1="838"
+                            y1="118"
+                            x2="838"
+                            y2="148"
+                            class="e-c"
+                            marker-end="url(#e-ahc)"
+                        />
+                        <text x="844" y="137" class="lbl-c">no</text>
                         <rect
-                            x="864"
-                            y="36"
+                            x="778"
+                            y="150"
                             width="120"
                             height="40"
                             rx="6"
                             class="n-claude"
                         />
-                        <text x="924" y="52" text-anchor="middle" class="t">
-                            Fix in the
+                        <text x="838" y="166" text-anchor="middle" class="t">
+                            Claude triages
                         </text>
-                        <text x="924" y="66" text-anchor="middle" class="t">
-                            deployed tag?
-                        </text>
-                        <rect
-                            x="864"
-                            y="92"
-                            width="120"
-                            height="40"
-                            rx="6"
-                            class="n-claude"
-                        />
-                        <text x="924" y="108" text-anchor="middle" class="t">
-                            Ref data
-                        </text>
-                        <text x="924" y="122" text-anchor="middle" class="t">
-                            published?
-                        </text>
-                        <rect
-                            x="864"
-                            y="148"
-                            width="120"
-                            height="40"
-                            rx="6"
-                            class="n-claude"
-                        />
-                        <text x="924" y="164" text-anchor="middle" class="t">
-                            Reproduce on
-                        </text>
-                        <text x="924" y="178" text-anchor="middle" class="t">
-                            UAT API + DB
-                        </text>
-
-                        <line x1="984" y1="56" x2="994" y2="56" class="bus" />
-                        <line x1="984" y1="112" x2="994" y2="112" class="bus" />
-                        <line x1="984" y1="168" x2="994" y2="168" class="bus" />
-                        <path d="M994 56 V222 H594" class="bus" />
                         <text
-                            x="764"
-                            y="214"
+                            x="838"
+                            y="181"
+                            text-anchor="middle"
+                            class="t-sub"
+                        >
+                            tag · config · repro
+                        </text>
+
+                        <line x1="838" y1="190" x2="838" y2="212" class="bus" />
+                        <line x1="614" y1="212" x2="927" y2="212" class="bus" />
+                        <text
+                            x="700"
+                            y="206"
                             text-anchor="middle"
                             class="lbl-c"
                         >
                             verdict
                         </text>
                         <line
-                            x1="594"
-                            y1="222"
-                            x2="594"
-                            y2="248"
+                            x1="614"
+                            y1="212"
+                            x2="614"
+                            y2="234"
                             class="e"
                             marker-end="url(#e-ah)"
                         />
                         <line
-                            x1="764"
-                            y1="222"
-                            x2="764"
-                            y2="248"
+                            x1="774"
+                            y1="212"
+                            x2="774"
+                            y2="234"
                             class="e"
                             marker-end="url(#e-ah)"
                         />
                         <line
-                            x1="924"
-                            y1="222"
-                            x2="924"
-                            y2="248"
+                            x1="927"
+                            y1="212"
+                            x2="927"
+                            y2="234"
                             class="e"
                             marker-end="url(#e-ah)"
                         />
 
                         <rect
-                            x="524"
-                            y="250"
+                            x="544"
+                            y="236"
                             width="140"
                             height="40"
                             rx="6"
                             class="n"
                         />
-                        <text x="594" y="266" text-anchor="middle" class="t">
+                        <text x="614" y="252" text-anchor="middle" class="t">
                             Code bug
                         </text>
                         <text
-                            x="594"
-                            y="281"
+                            x="614"
+                            y="267"
                             text-anchor="middle"
                             class="t-sub"
                         >
-                            fix ticket + PR
+                            fix, then rerun
                         </text>
                         <rect
-                            x="694"
-                            y="250"
+                            x="704"
+                            y="236"
                             width="140"
                             height="40"
                             rx="6"
                             class="n"
                         />
-                        <text x="764" y="266" text-anchor="middle" class="t">
-                            Ref data gap
+                        <text x="774" y="252" text-anchor="middle" class="t">
+                            Config gap
                         </text>
                         <text
-                            x="764"
-                            y="281"
+                            x="774"
+                            y="267"
                             text-anchor="middle"
                             class="t-sub"
                         >
-                            publish the fix
+                            publish, then rerun
                         </text>
                         <rect
                             x="864"
-                            y="250"
-                            width="120"
+                            y="236"
+                            width="126"
                             height="40"
                             rx="6"
                             class="n"
                         />
-                        <text x="924" y="266" text-anchor="middle" class="t">
+                        <text x="927" y="252" text-anchor="middle" class="t">
                             As designed
                         </text>
                         <text
-                            x="924"
-                            y="281"
+                            x="927"
+                            y="267"
                             text-anchor="middle"
                             class="t-sub"
                         >
                             draft a reply
                         </text>
+
+                        <path d="M774 276 V294 H528" class="e-c" />
+                        <path
+                            d="M544 256 H528 V64 H542"
+                            class="e-c"
+                            marker-end="url(#e-ahc)"
+                        />
+                        <line x1="528" y1="256" x2="528" y2="294" class="e-c" />
+                        <text
+                            x="521"
+                            y="160"
+                            transform="rotate(-90 521 160)"
+                            text-anchor="middle"
+                            class="lbl-c"
+                        >
+                            rerun AI + QA
+                        </text>
                     </svg>
                 </div>
                 <figcaption>
-                    Locally Claude runs the whole check itself. On UAT, QA tests
-                    and Claude works out why a bug happened.
+                    Locally Claude runs the whole check. On UAT, Claude's AI run
+                    and QA's manual run go side by side, and Claude triages
+                    every failure.
                 </figcaption>
             </figure>
 
@@ -2558,7 +2610,7 @@
                             class="n-pend"
                         />
                         <text x="760" y="197" text-anchor="middle" class="t">
-                            BE + FE overlays PR
+                            BE + FE deploy PR
                         </text>
                         <text
                             x="760"
@@ -2635,7 +2687,7 @@
                             class="n-pend"
                         />
                         <text x="760" y="317" text-anchor="middle" class="t">
-                            PROD overlays PR
+                            PROD deploy PR
                         </text>
                         <text
                             x="760"
